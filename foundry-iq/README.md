@@ -19,7 +19,7 @@ Foundry IQ gives your agents a shared knowledge layer, so they can find and use 
 
 - [Foundry IQ: Introducing Knowledge Graphs, engineered for agents](https://aka.ms/FoundryIQ)
 - [Knowledge Graphs for Better Retrieval: Entities, Topics & Evidence Synthesis](https://aka.ms/FoundryIQ-KG-Evals)
-- [Microsoft-Retriever-1 brings sub-second agentic retrieval to Foundry IQ](https://aka.ms/FoundryIQ-Retriever1-Eval)
+- [Microsoft-Retriever-1 brings sub-second agentic retrieval to Foundry IQ](https://aka.ms/FoundryIQ-Retriever1-Evals)
 - [Microsoft Managed Knowledge & Skills](https://aka.ms/FoundryManagedKnowledge)
 - [Foundry IQ: enterprise knowledge and security, ready for production](https://aka.ms/FoundryIQ-SharePoint)
 
