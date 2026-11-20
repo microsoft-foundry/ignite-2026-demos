@@ -58,6 +58,14 @@ Once you're running, the guide walks through monitoring spend in the Foundry por
 
 **Link to doc:** [Plan and manage costs for Microsoft Foundry](https://learn.microsoft.com/en-us/azure/foundry/concepts/manage-costs)
 
+## [Set budgets with cost controls (preview)](https://learn.microsoft.com/en-us/azure/foundry/concepts/cost-controls)
+
+A cost control is a policy in Foundry that tracks the spending or token usage of the projects, model deployments, agents, or hosted agent sessions that you choose. Each one combines a budget in US dollars or tokens, the usage it applies to, a daily, weekly, or monthly reset period, and threshold actions. You can create cost controls on a Foundry resource to set budgets across teams, or on a project to cap your own spending, and you can narrow each one with filters or give every project, agent, or session its own share of the budget.
+
+Because cost controls count usage as requests run, they can act before an overrun reaches your invoice. Pair a Send alert threshold, such as 80%, with a Block usage threshold at 100%: alerts go through Azure Event Grid, and blocked requests return HTTP 429 until the next reset or until you raise the budget. Cost controls keep a running total from a snapshot of your prices, so they can run slightly ahead of your bill. Use them as guardrails, and use the cost pages and Azure Cost Management to reconcile what you spend. The overview also lists what the preview supports, including which models and agents are counted.
+
+**Links to docs:** [Cost controls overview](https://learn.microsoft.com/en-us/azure/foundry/concepts/cost-controls) | [Create cost controls](https://learn.microsoft.com/en-us/azure/foundry/how-to/create-cost-controls)
+
 ## [Attribute and cap model spend](https://ai.gateway.azure.com/docs/finops)
 
 Azure AI Gateway turns token usage into estimated USD cost and emits it as OpenTelemetry metrics you can send to Application Insights or your own dashboards. By giving each application its own API key, or adding validated Microsoft Entra claims as metric dimensions, you can see exactly which applications, callers, and cost centers are driving model spend.

@@ -570,6 +570,7 @@ html:not(.js) .rec + .rec{margin-top:12px}
   .btn-search .lbl{display:none}
   .docs{grid-template-columns:minmax(0,1fr)}
   .doc-tabs{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .doc-tab:last-child:nth-child(odd){grid-column:1/-1}
   .parts{grid-template-columns:repeat(2,minmax(0,1fr))}
   .scen{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
@@ -1174,14 +1175,15 @@ html:not(.js) .rec + .rec{margin-top:12px}
     <div class="sec-head reveal">
       <p class="eyebrow">Documentation</p>
       <h2 id="docs-title">From estimate to commitment<a class="hash" href="#docs" aria-label="Link to the documentation section">#</a></h2>
-      <p class="lead">Four guides that put the demo into practice: plan and reconcile costs, attribute and cap model spend, lower the cost of each request, and commit to capacity.</p>
+      <p class="lead">Five guides that put the demo into practice: plan and reconcile costs, set budgets with cost controls, attribute and cap model spend, lower the cost of each request, and commit to capacity.</p>
     </div>
     <div class="docs reveal">
       <div class="doc-tabs" role="tablist" aria-orientation="vertical" aria-label="Documentation guides">
         <button class="doc-tab" role="tab" id="dt-1" aria-controls="dp-1" aria-selected="true" type="button"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span><span><b>Plan and manage costs</b><small>Microsoft Foundry</small></span></button>
-        <button class="doc-tab" role="tab" id="dt-2" aria-controls="dp-2" aria-selected="false" type="button"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-key"/></svg></span><span><b>Attribute and cap model spend</b><small>Azure AI Gateway</small></span></button>
-        <button class="doc-tab" role="tab" id="dt-3" aria-controls="dp-3" aria-selected="false" type="button"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg></span><span><b>Lower the cost of each request</b><small>Model router · caching · batch</small></span></button>
-        <button class="doc-tab" role="tab" id="dt-4" aria-controls="dp-4" aria-selected="false" type="button"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-cube"/></svg></span><span><b>Commit to capacity</b><small>PTUs · reservations · prepurchase</small></span></button>
+        <button class="doc-tab" role="tab" id="dt-2" aria-controls="dp-2" aria-selected="false" type="button"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span><span><b>Set budgets with cost controls</b><small>Microsoft Foundry · preview</small></span></button>
+        <button class="doc-tab" role="tab" id="dt-3" aria-controls="dp-3" aria-selected="false" type="button"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-key"/></svg></span><span><b>Attribute and cap model spend</b><small>Azure AI Gateway</small></span></button>
+        <button class="doc-tab" role="tab" id="dt-4" aria-controls="dp-4" aria-selected="false" type="button"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg></span><span><b>Lower the cost of each request</b><small>Model router · caching · batch</small></span></button>
+        <button class="doc-tab" role="tab" id="dt-5" aria-controls="dp-5" aria-selected="false" type="button"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-cube"/></svg></span><span><b>Commit to capacity</b><small>PTUs · reservations · prepurchase</small></span></button>
       </div>
       <div class="card">
         <!-- Doc 1 -->
@@ -1215,6 +1217,27 @@ html:not(.js) .rec + .rec{margin-top:12px}
 
         <!-- Doc 2 -->
         <div class="doc-panel" role="tabpanel" id="dp-2" aria-labelledby="dt-2" tabindex="0">
+          <span class="chip">Microsoft Learn · Preview</span>
+          <h3><a href="https://learn.microsoft.com/en-us/azure/foundry/concepts/cost-controls" target="_blank" rel="noopener">Set budgets with cost controls</a></h3>
+          <p>A cost control is a policy in Foundry that tracks the spending or token usage of the projects, model deployments, agents, or hosted agent sessions that you choose. Because it counts usage as requests run, it can send an alert or block new requests before an overrun reaches your invoice.</p>
+          <div class="widget">
+            <div class="flow" role="img" aria-label="A request arrives, Foundry checks the cost controls that apply to it, the request runs and its usage counts toward each matching budget, and once a block threshold is reached new requests return HTTP 429">
+              <div class="node"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Request arrives</div><span class="flow-arrow" aria-hidden="true"></span>
+              <div class="node"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Check matching cost controls</div><span class="flow-arrow" aria-hidden="true"></span>
+              <div class="node"><svg class="ic" aria-hidden="true"><use href="#i-gauge"/></svg>Run and count usage toward each budget</div><span class="flow-arrow" aria-hidden="true"></span>
+              <div class="node"><svg class="ic" aria-hidden="true"><use href="#i-block"/></svg>At the block threshold, new requests get 429</div>
+            </div>
+          </div>
+          <div class="two">
+            <div class="mini"><h4><svg class="ic" aria-hidden="true"><use href="#i-coin"/></svg>Budget</h4><p>Set a budget in US dollars or tokens that resets daily, weekly, or monthly. Apply it to a whole Foundry resource or project, or filter to specific projects, deployments, agents, or sessions, and give each one its own share if you want.</p></div>
+            <div class="mini"><h4><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg>Act</h4><p>Pair a Send alert threshold, such as 80%, with a Block usage threshold at 100%. Alerts go through Azure Event Grid, and blocked requests return HTTP 429 until the next reset or until you raise the budget.</p></div>
+          </div>
+          <div class="note"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><span>Cost controls keep a running total from a snapshot of your prices, so they can run slightly ahead of your bill. Use them as guardrails, and use the cost pages and Azure Cost Management to reconcile what you spend.</span></div>
+          <div class="link-row"><a class="link-chip" href="https://learn.microsoft.com/en-us/azure/foundry/concepts/cost-controls" target="_blank" rel="noopener">Cost controls overview<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></a><a class="link-chip" href="https://learn.microsoft.com/en-us/azure/foundry/how-to/create-cost-controls" target="_blank" rel="noopener">Create cost controls<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+        </div>
+
+        <!-- Doc 3 -->
+        <div class="doc-panel" role="tabpanel" id="dp-3" aria-labelledby="dt-3" tabindex="0">
           <span class="chip">Azure AI Gateway</span>
           <h3><a href="https://ai.gateway.azure.com/docs/finops" target="_blank" rel="noopener">Attribute and cap model spend</a></h3>
           <p>Azure AI Gateway turns token usage into estimated USD cost and emits it as OpenTelemetry metrics you can send to Application Insights or your own dashboards.</p>
@@ -1234,8 +1257,8 @@ html:not(.js) .rec + .rec{margin-top:12px}
           <div class="link-row"><a class="link-chip" href="https://ai.gateway.azure.com/docs/finops" target="_blank" rel="noopener">Attribute and cap model spend<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></a></div>
         </div>
 
-        <!-- Doc 3 -->
-        <div class="doc-panel" role="tabpanel" id="dp-3" aria-labelledby="dt-3" tabindex="0">
+        <!-- Doc 4 -->
+        <div class="doc-panel" role="tabpanel" id="dp-4" aria-labelledby="dt-4" tabindex="0">
           <span class="chip">Microsoft Learn</span>
           <h3><a href="https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-router" target="_blank" rel="noopener">Lower the cost of each request</a></h3>
           <p>Model router is a model you deploy like any other, but it looks at each prompt and sends it to the most suitable underlying model, so simple requests don't pay frontier-model prices.</p>
@@ -1294,8 +1317,8 @@ html:not(.js) .rec + .rec{margin-top:12px}
           </div>
         </div>
 
-        <!-- Doc 4 -->
-        <div class="doc-panel" role="tabpanel" id="dp-4" aria-labelledby="dt-4" tabindex="0">
+        <!-- Doc 5 -->
+        <div class="doc-panel" role="tabpanel" id="dp-5" aria-labelledby="dt-5" tabindex="0">
           <span class="chip">Microsoft Learn</span>
           <h3><a href="https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/provisioned-throughput" target="_blank" rel="noopener">Commit to capacity with PTUs, reservations, and prepurchase</a></h3>
           <p>Provisioned throughput units (PTUs) reserve dedicated model capacity for a deployment and are billed per PTU per hour whether or not you send traffic. Pick the workload below to see which option the docs point to.</p>
@@ -1946,6 +1969,8 @@ html:not(.js) .rec + .rec{margin-top:12px}
       ['session', 'Your guide to FinOps for AI at Microsoft Ignite 2026', 'https://techcommunity.microsoft.com/blog/finopsblog/your-guide-to-finops-for-ai-at-microsoft-ignite-2026/4569117', 'Every FinOps session, including Copilot and GitHub'],
       ['more', 'FinOps for AI: Plan, manage, and optimize AI value with Microsoft Azure and GitHub', GH + '/blob/main/finops-on-microsoft-foundry/FinOps%20for%20AI%20Azure%20and%20GitHub.PDF', 'Deck · 27 slides (PDF)'],
       ['docs', 'Plan and manage costs for Microsoft Foundry', LEARN + 'foundry/concepts/manage-costs', 'Microsoft Learn'],
+      ['docs', 'Cost controls overview (preview)', LEARN + 'foundry/concepts/cost-controls', 'Microsoft Learn · cost controls'],
+      ['docs', 'Create cost controls', LEARN + 'foundry/how-to/create-cost-controls', 'Microsoft Learn · cost controls'],
       ['docs', 'Attribute and cap model spend', 'https://ai.gateway.azure.com/docs/finops', 'Azure AI Gateway docs'],
       ['docs', 'Model router concepts', LEARN + 'foundry/openai/concepts/model-router', 'Microsoft Learn'],
       ['docs', 'How to use model router', LEARN + 'foundry/openai/how-to/model-router', 'Microsoft Learn'],
