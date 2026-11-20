@@ -131,10 +131,6 @@ When a subscription goes over its cost quota, an Azure Monitor alert triggers a 
 
 # Further reading
 
-These resources apply to AI spend in general rather than to Foundry specifically.
+This resource applies to FinOps across the Microsoft Cloud rather than to Foundry specifically.
 
 - [FinOps toolkit](https://github.com/microsoft/finops-toolkit): Microsoft's open-source tools for adopting FinOps on the Microsoft Cloud. It's useful as a reporting layer on top of Foundry cost data.
-- [FinOps Framework: AI technology category](https://www.finops.org/framework/technology-categories/ai/): The FinOps Foundation's guidance on applying FinOps practices to AI.
-- [How to Build a Generative AI Cost and Usage Tracker](https://www.finops.org/wg/how-to-build-a-generative-ai-cost-and-usage-tracker/): A FinOps Foundation working group paper.
-- [Cost Estimation of AI Workloads](https://www.finops.org/wg/cost-estimation-of-ai-workloads/): A FinOps Foundation working group paper.
-- [Optimizing GenAI Usage](https://www.finops.org/wg/optimizing-genai-usage/): A FinOps Foundation working group paper on balancing cost, performance, and efficiency.

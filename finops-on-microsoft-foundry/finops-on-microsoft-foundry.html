@@ -512,6 +512,7 @@ html:not(.js) .rec + .rec{margin-top:12px}
 .reading{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
 .reading .read{grid-column:span 2}
 .reading .read:nth-child(n+4){grid-column:span 3}
+.reading .read:only-child{grid-column:1/-1}
 .read{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:#fff}
 .read:hover{color:#fff}
 .read .src{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--eyebrow)}
@@ -1483,15 +1484,11 @@ html:not(.js) .rec + .rec{margin-top:12px}
         <div>
           <p class="eyebrow">Further reading</p>
           <h3>FinOps for AI, beyond Foundry</h3>
-          <p>These resources apply to AI spend in general rather than to Foundry specifically.</p>
+          <p>This resource applies to FinOps across the Microsoft Cloud rather than to Foundry specifically.</p>
         </div>
       </div>
       <div class="reading">
         <a class="card read hoverable reveal" href="https://github.com/microsoft/finops-toolkit" target="_blank" rel="noopener"><span class="src">Microsoft · Open source</span><b>FinOps toolkit</b><span class="d">Microsoft's open-source tools for adopting FinOps on the Microsoft Cloud. It's useful as a reporting layer on top of Foundry cost data.</span><span class="go">Open on GitHub<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></span></a>
-        <a class="card read hoverable reveal" href="https://www.finops.org/framework/technology-categories/ai/" target="_blank" rel="noopener"><span class="src">FinOps Foundation</span><b>FinOps Framework: AI technology category</b><span class="d">The FinOps Foundation's guidance on applying FinOps practices to AI.</span><span class="go">Read<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></span></a>
-        <a class="card read hoverable reveal" href="https://www.finops.org/wg/how-to-build-a-generative-ai-cost-and-usage-tracker/" target="_blank" rel="noopener"><span class="src">FinOps Foundation · Working group paper</span><b>How to Build a Generative AI Cost and Usage Tracker</b><span class="d">A FinOps Foundation working group paper.</span><span class="go">Read<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></span></a>
-        <a class="card read hoverable reveal" href="https://www.finops.org/wg/cost-estimation-of-ai-workloads/" target="_blank" rel="noopener"><span class="src">FinOps Foundation · Working group paper</span><b>Cost Estimation of AI Workloads</b><span class="d">A FinOps Foundation working group paper.</span><span class="go">Read<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></span></a>
-        <a class="card read hoverable reveal" href="https://www.finops.org/wg/optimizing-genai-usage/" target="_blank" rel="noopener"><span class="src">FinOps Foundation · Working group paper</span><b>Optimizing GenAI Usage</b><span class="d">A working group paper on balancing cost, performance, and efficiency.</span><span class="go">Read<svg class="ic" aria-hidden="true"><use href="#i-ext"/></svg></span></a>
       </div>
     </div>
   </div>
@@ -1969,10 +1966,6 @@ html:not(.js) .rec + .rec{margin-top:12px}
       ['video', 'aka.ms/FoundryTokenomics', 'https://aka.ms/FoundryTokenomics', 'More about managing AI costs'],
       ['more', 'AI-Gateway FinOps framework lab', 'https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/finops-framework', 'Hands-on lab · Azure-Samples'],
       ['more', 'FinOps toolkit', 'https://github.com/microsoft/finops-toolkit', 'Further reading · Microsoft open source'],
-      ['more', 'FinOps Framework: AI technology category', 'https://www.finops.org/framework/technology-categories/ai/', 'Further reading · FinOps Foundation'],
-      ['more', 'How to Build a Generative AI Cost and Usage Tracker', 'https://www.finops.org/wg/how-to-build-a-generative-ai-cost-and-usage-tracker/', 'Further reading · FinOps Foundation'],
-      ['more', 'Cost Estimation of AI Workloads', 'https://www.finops.org/wg/cost-estimation-of-ai-workloads/', 'Further reading · FinOps Foundation'],
-      ['more', 'Optimizing GenAI Usage', 'https://www.finops.org/wg/optimizing-genai-usage/', 'Further reading · FinOps Foundation'],
       ['more', 'microsoft-foundry/ignite-2026-demos', GH, 'GitHub repository']
     ].map(function (r) { return { g: r[0], t: r[1], u: r[2], n: r[3] }; });
     var KIND = { page: ['On page', 'i-hash'], video: ['Video', 'i-video'], blog: ['Blog', 'i-pen'], session: ['Session', 'i-mic'], docs: ['Docs', 'i-book'], more: ['Resource', 'i-link'] };
